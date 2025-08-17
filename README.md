@@ -1,2 +1,2 @@
 # ppfs_mlpart
-various ml implementations on 6 diffrent datasets
+Various ml implementations on 6 different datasets.
