@@ -34,19 +34,18 @@ def preprocess(file_path,split_value,target_column_index,has_header):
 #making target variable numarical(optional)
 
 def implement(model):
-    """this function contains knn implementation (modeling and fitting) on the dataset with 5 
+    """this function contains knn implementation (modeling and fitting) on the dataset with 1 
     initiations and shows the results of the implementations. (it needs to take target variable varieties ).
     Note: This function doesn't have compile it is not appoprate to use this function for perceptron learning algs.
-    This function is not for iterative ml algs. it is for lazy learner algs.
-    because it doesn't have training vs test accuraacy comparison and doesn't have epochs and .argmax(axis=1) """
+    because it doesn't have training vs test accuracy comparison and doesn't have epochs and .argmax(axis=1) """
     #initiante ml
     model.fit(x_train, y_train)
     #model evaluation
     y_pred = model.predict(x_test)
 
     print(f'Classification report: {classification_report(y_test, y_pred)}')
-    print(f"Accuracy score is: {accuracy_score(y_test,y_pred)}")
-    print(f"Percision score is: {precision_score(y_test,y_pred)}")
+    print(f"Accuracy score is: {accuracy_score(y_test,y_pred, average='weighted')}")
+    print(f"Percision score is: {precision_score(y_test,y_pred, average='weighted')}")
     print(f"Recall score is: {recall_score(y_test,y_pred)}")
     print(f'Confusion matrix: {confusion_matrix(y_test, y_pred)}')
 

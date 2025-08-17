@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import AdaBoostClassifier 
+from sklearn.svm import SVC 
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, precision_score, recall_score
 
 
@@ -34,7 +34,7 @@ def preprocess(file_path,split_value,target_column_index,has_header):
 #making target variable numarical(optional)
 
 def implement(model):
-    """this function contains Ada Boost implementation (modeling and fitting) on the dataset with 1 
+    """this function contains Support Vector Classifier implementation (modeling and fitting) on the dataset with 1 
     initiations and shows the results of the implementations. (it needs to take target variable varieties ).
     Note: This function doesn't have compile it is not appoprate to use this function for perceptron learning algs.
     because it doesn't have training vs test accuracy comparison and doesn't have epochs and .argmax(axis=1) """
@@ -52,5 +52,5 @@ def implement(model):
 
 #running the code
 x_train, x_test, y_train, y_test, x_ds, y_ds = preprocess("diabetes_kmeans.csv", 0.2, 8, True)
-implement(AdaBoostClassifier(n_estimators=100, random_state = 10))
+implement(SVC(max_iter = -1, random_state=10))
 
