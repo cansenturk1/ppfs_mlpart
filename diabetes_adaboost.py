@@ -53,5 +53,5 @@ def implement(model):
 
 #running the code
 x_train, x_test, y_train, y_test, x_ds, y_ds = preprocess("diabetes_kmeans.csv", 0.2, 8, True)
-implement(KNeighborsClassifier())
+implement(AdaBoostClassifier())
 
